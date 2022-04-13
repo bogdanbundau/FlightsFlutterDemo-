@@ -1,44 +1,18 @@
+import 'style.dart';
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
-void main() {
-  runApp( MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
-
-  
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage() ,
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget{
+class SearchPage extends StatelessWidget{
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(title: Text("Hello World!")),
-       // body: Column(children: <Widget>[TestWidget(), TestWidget(), TestWidget()],));
-        body: TextInputWidget());
+        appBar: AppBar(title: const Text("Search Page"), backgroundColor: Colors.green,),
+        // body: Column(children: <Widget>[TestWidget(), TestWidget(), TestWidget()],));
+        body: Center(child: TextInputWidget()));
   }
 }
-/*
-
-class TestWidget extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Text('Ce marfa');
-  }
-}*/
 class TextInputWidget extends StatefulWidget{
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
@@ -51,7 +25,7 @@ class _TextInputWidgetState extends State<TextInputWidget>{
   @override
   void dispose(){
     super.dispose();
-        controller.dispose();
+    controller.dispose();
   }
   void changeText(text){
     if( text == "Merge") {
@@ -67,13 +41,28 @@ class _TextInputWidgetState extends State<TextInputWidget>{
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget> [
-      TextField(
-        controller: this.controller,
-        decoration: InputDecoration(
-            prefixIcon: Icon(Icons.message),labelText: "Introdu un mesaj"),
-        onChanged: (text) => this.changeText(text),
+      Container(
+        height: 300,
       ),
-    Text(this.text)
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          controller: this.controller,
+          decoration: const InputDecoration(
+              prefixIcon: Icon(Icons.search),labelText: "Enter a letter"),
+          onChanged: (text) => this.changeText(text),
+        ),
+      ),
+      ElevatedButton(
+          style: flatButtonStyle,
+          onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage(firstLetter: "",))
+            );
+          },
+          child: const Text("Get inspiration!")
+      )
     ]);
   }
 }

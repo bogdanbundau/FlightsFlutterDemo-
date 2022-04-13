@@ -25,7 +25,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-android {
+android {              
     compileSdkVersion flutter.compileSdkVersion
 
     compileOptions {
@@ -58,6 +58,11 @@ android {
         }
     }
 }
+android {                                                                                     
+  defaultConfig {                                                                             
+     minSdkVersion 17                                                                          
+ }     
+}       
 
 flutter {
     source '../..'
