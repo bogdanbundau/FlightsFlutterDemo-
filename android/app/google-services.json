@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973187506260",
+    "project_id": "practica-e23cc",
+    "storage_bucket": "practica-e23cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973187506260:android:ae18ac7b25d6e3f38bcdc1",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973187506260-4s5at4phc9gnemk6dcj3s4g813sq7494.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBphDDhiG9hj1CwQLhcnri9GUM2t4WDRes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973187506260-4s5at4phc9gnemk6dcj3s4g813sq7494.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
