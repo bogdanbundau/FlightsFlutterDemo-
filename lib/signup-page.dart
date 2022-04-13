@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/fire_auth.dart';
+import 'package:flutter_application_1/home_page.dart';
 import 'login-page.dart';
 
 
@@ -63,7 +64,7 @@ class Signup extends StatelessWidget {
                     else {
                       Navigator.pushAndRemoveUntil(context,
                           MaterialPageRoute(
-                              builder: (context) => Signup()), (route) => false);
+                              builder: (context) => HomePage(firstLetter: '')), (route) => false);
                     }
 
                   },

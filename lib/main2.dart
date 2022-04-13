@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/login-page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'login_screen.dart';
 import 'dart:math';
+import 'package:firebase_core/firebase_core.dart';
 
 String generateRandomLetter(){
   var r = Random();
@@ -97,7 +99,9 @@ class Recipes{
 
 
 
-void main(){
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -135,7 +139,7 @@ class _MyAppState extends State <MyApp>{
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: LoginPage(),
     );
   }
 

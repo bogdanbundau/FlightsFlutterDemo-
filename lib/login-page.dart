@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home_page.dart';
 import 'signup-page.dart';
 import 'fire_auth.dart';
 
@@ -89,7 +90,7 @@ class LoginPage extends StatelessWidget {
                       if (errorMsg == null) {
                         Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) => Signup()),
+                            MaterialPageRoute(builder: (context) => HomePage(firstLetter: '')),
                             (route) => false);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -120,7 +121,7 @@ class LoginPage extends StatelessWidget {
                     child: const Text('Sign Up'),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Signup()));
+                          MaterialPageRoute(builder: (context) => HomePage(firstLetter: '')));
                     })
               ],
             ),
